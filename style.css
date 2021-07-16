@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(25deg, #8109a0, #966bba, #a1b2d3, #9ff9eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* LAYOUT */
+
+
+.head-game{
+  position: absolute;
+  top: 30px;
+  /* left: 28%; */
+  font-size: 4rem;
+  transform: translate(0%, -3px);
+  color: rgb(7, 6, 6);
+  font-weight: bold;
+  font-family: 'Otomanopee One', sans-serif;
+}
+
+
+.rulesbar{
+  position: absolute;
+  top: 2.5vh;
+  right: 1vw;
+  cursor: pointer;
+}
+
+.rule-img{
+  position: absolute;
+  width: 8vw;
+  z-index: 10;
+  top: 10px;
+  right: 46px;
+  overflow: hidden;
+}
+
+.rule-img img{
+  width: 12vw;
+}
+
+
+
+.line{
+  margin: 2px;
+  height: 6px;
+  width: 37px;
+  background: #410153;
+}
+
+.cross{
+  position: absolute;
+  top: 6px;
+  right: 21px;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.cross:hover{
+  color: rgb(172, 171, 171);
+}
+
+.rulesboard{
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.571);
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  color: white;
+  transition: 0.5s;
+}
+
+.rules{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.rulesboard h2{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 5rem;
+  border-bottom: 1px solid;
+}
+
+.rulesboard li{
+  font-size: 2rem;
+}
+
+.rulesboard ul{
+  padding: 20px;
+}
+
+.input-score{
+  font-size: 2rem;
+  padding: 8px;
+  background: #966bba;
+  padding: 16px 14px;
+  border-radius: 14px;
+}
+
+.input-score input{
+  padding: 1px;
+  width: 6vw;
+  text-align: center;
+  outline: none;
+  border-radius: 4px;
+}
+
+.input-score button{
+  background: black;
+  color: white;
+  width: 6vw;
+  height: 3vh;
+}
+
+.input-score button:hover{
+  background: rgb(84, 83, 83);
+}
+
+
+
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  z-index: 1;
+}
+
+
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  /* color: #c7365f; */
+  color: #8109A0;
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: #c7365f;
+  background-color: #8109A0;
+
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 39.3rem;
+}
+.btn--hold {
+  top: 46.1rem;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+  /* background-color: hsl(124, 97%, 60%); */
+}
+
+.player--winner .name {
+  font-weight: 700;
+  /* color: #c7365f; */
+  color: #8109A0;
+}
+
+
+.hidden{
+  display: none;
+}

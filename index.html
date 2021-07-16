@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Pig Game</title>
+</head>
+
+<body>
+
+  <div class="head-game">
+    WIN THE GAME WHEN POINTS ARE <i>50</i>
+  </div>
+
+  <div class="rulesbar">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="rule-img hidden">
+    <img src="rule.png" alt="">
+  </div>
+
+  <div class="rulesboard">
+    <div class="cross hidden">
+      <i class="fa fa-close"></i>
+    </div>
+    <div class="rules hidden">
+      <h2>Rules of the Game</h2>
+      <ul>
+        <li>Roll the dice and a random number comes.</li>
+        <li>The number that comes on dice keeps getting added to the current score</li>
+        <li>Press hold button to add this score to your score board</li>
+        <li>If 1 comes on rolling the dice and all your current score gets lost and the game play shifts to the next
+          player</li>
+        <li>The player who scores 50 first wins the game.</li>
+      </ul>
+
+      <div class="input-score">
+        Enter the score for which you would like to play: <input type="number" class="score-choice"> 
+        <button class="sc-btn">USE THIS</button>
+      </div>
+    </div>
+  </div>
+
+
+  <main>
+    <section class="player player--0 player--active">
+      <h2 class="name" id="name--0">Player 1</h2>
+      <p class="score" id="score--0">15</p>
+      <div class="current">
+        <p class="current-label">Current</p>
+        <p class="current-score" id="current--0">0</p>
+      </div>
+    </section>
+
+    <section class="player player--1">
+      <h2 class="name" id="name--1">Player 2</h2>
+      <p class="score" id="score--1">22</p>
+      <div class="current">
+        <p class="current-label">Current</p>
+        <p class="current-score" id="current--1">0</p>
+      </div>
+    </section>
+
+    <img src="dice-5.png" alt="Playing dice" class="dice" />
+    <button class="btn btn--new">🔄 New game</button>
+    <button class="btn btn--roll">🎲 Roll dice</button>
+    <button class="btn btn--hold">📥 Hold</button>
+  </main>
+
+
+  <script src="script.js"></script>
+  <script src="rule.js"></script>
+</body>
+
+</html>
