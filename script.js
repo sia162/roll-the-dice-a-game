@@ -65,6 +65,9 @@ const newGame = ()=>{
 
     //5.hiding dice at beginning of game
     diceEl.classList.add('hidden');
+
+    //6. heading of game
+    document.querySelector('.head-game').textContent = `WIN THE GAME WHEN POINTS ARE ${scoreChoice}`
 }
 
 newGame();
@@ -122,6 +125,7 @@ btnHold.addEventListener('click' , () =>{
             diceEl.classList.add('hidden');
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+            document.querySelector(".head-game").textContent = `Player ${activePlayer+1} WON THE GAME!! 🎉`;
         } 
         else{
             //3.switching next player
